@@ -27,25 +27,112 @@
     <meta name="theme-color" content="#fafafa" />
   </head>
   <body>
-    <!-- *** ESTRUCTURA SEMÁNTICA *** -->
-    <!-- Header (encabezado de la página, zona superior) -->
-    <header>
-      <!-- nav (el navegador de toda la web) -->
-      <nav>
-        <a href="" class="link1">link1</a>
-        <a href="" class="link2">link2</a>
-        <a href="" class="link3">link3</a>
-        <a href="" class="link4">link4</a>
-      </nav>
-    </header>
-    <!-- Main (centro de la página, zona central) -->
-    <main>
-      <!-- section y article (posibilidades dentro de main) -->
-    </main>
-    <!-- Footer (final de la página, zona inferior) -->
-    <footer>
-      <h4>&copy;Copyright</h4>
-    </footer>
+  <header>
+    <picture>
+      <!-- móvil -->
+      <source
+        srcset="
+          img/smartphone/banner.jpg    1x,
+          img/smartphone/banner@2x.jpg 2x,
+          img/smartphone/banner@3x.jpg 3x
+        "
+        media="(min-width:320px) and (max-width:450px)"
+      />
+      <!-- ipad -->
+      <source
+        srcset="img/tablet/banner.jpg 1x, img/tablet/banner@2x.jpg 2x"
+        media="(min-width:768px) and (max-width:900px)"
+      />
+      <!-- escritorio -->
+      <source
+        srcset="img/desktop/banner.jpg 1x, img/desktop/banner@2x.jpg 2x"
+        media="(min-width:1000px) and (max-width:1366px)"
+      />
+      <!-- escritorios Grandes -->
+      <source srcset="img/desktop/banner.jpg" media="(min-width:1367px)" />
+      <!-- Imagen de respaldo -->
+      <img src="img/desktop/banner.jpg" alt="banner" />
+    </picture>
+
+  </header>
+
+  <main>
+    
+    <form name="desayuno" method="POST" data-netlify="true">
+
+      <ol>
+        <li>
+     <label for="text">Nombre:</label>
+     <input type="text" name="nombre" placeholder="escribe aquí tu nombre" autofocus>
+     </li><br>
+     <li>
+     <label for="text">Código postal</label>
+     <input type="text" name="codigopostal" placeholder="ejemplo:12345" pattern="[0-9] {5}">
+     </li><br>
+     <li>
+     <label for="">Sexo</label>
+     <input type="radio" name="vh" value="v">Varón
+     <input type="radio" name="vh" value="h">Hembra
+     </li><br>
+     <li>
+     <label for="text">Te gusta el café?</label>
+     <input type="radio" name="sn" value="s" checked>sí
+     <input type="radio" name="sn" value="n">no
+     </li><br>
+     <li>
+     <label for="text">Cómo tomas el café?</label>
+     <input type="checkbox" name="solo"  value="solo">solo
+     <input type="checkbox" name="con leche"  value="con leche">con leche
+     <input type="checkbox" name="con hielo"  value="con hielo">con hielo
+     <input type="checkbox" name="con licor"  value="con licor">con licor
+     <input type="checkbox" name="de otra forma"  value="de otra forma">de otra forma <br>  <p class="aclaracion">(puedes indicar varios item)</p>
+
+     </li><br>
+     <li>
+     <label for="">Cuántos tomas al día</label>
+     <input type="number">
+     </li><br>
+     <li>
+     <label for="">De dónde prefieres el café?</label>
+     <select name="paises" id="">
+     <option value="colombia">Colombia</option>
+     <option value="peru">Perú</option>
+     <option value="ecuador">Ecuador</option>
+     <option value="congo">Congo</option>
+     </select>
+
+     
+     </ol>
+     <pre>
+       Si indicas una dirección recibirás
+        <spam>GRATIS</spam>
+        un kilo de café del país que 
+        hayas indicado
+    </pre>
+    <ol>
+      <li value="8">
+        <label for="">Calle</label>
+        <input type="text">
+        <label for="">número</label>
+        <input type ="text" size="4" maxlength="4">
+        <label for="">piso</label>
+        <input type="text" size="4">
+        <label for="">puerta</label>
+        <input type="text" size="4">
+      </li>
+    </ol>
+
+
+
+
+
+     
+     <p>Son correctos los datos?<input type="submit" value="enviar"></p>
+     <p>Quieres rectificar algún dato?<input type="reset" value="borrar">
+      
+    </form>
+
+  </main>
 
     <!-- *** Google Analytics *** -->
     <script src="https://www.google-analytics.com/analytics.js" async></script>
